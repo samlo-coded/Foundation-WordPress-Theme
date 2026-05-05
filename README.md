@@ -22,6 +22,29 @@ This is **not** a classic theme and **not** a pure Full Site Editing theme. It i
 
 ---
 
+## The Building Approach
+
+This theme is built on a **mixed editing model** — not everything needs to be a custom block, and not everything should be left to the editor alone. The right tool depends on the content.
+
+**Use the WordPress block editor for:**
+- Page layout and structure — groups, columns, spacers
+- Static content sections — headings, paragraphs, images, buttons
+- Simple hero sections and call-to-action banners that don't need structured data
+- Anything an editor can reasonably build and maintain themselves
+
+**Use ACF Pro blocks for:**
+- Sections with structured, repeatable data — testimonials, services, project grids
+- Anything where the output needs to be guaranteed regardless of what the editor does
+- Content that requires PHP logic — conditional output, custom queries, calculated values
+
+**Use block patterns for:**
+- Common layout starting points editors can drop in and customise
+- Branded section templates that maintain design consistency
+
+The goal is to give editors **just enough flexibility** without exposing them to layout decisions that should be controlled by code. A well-built page on this theme will typically be a mix of native blocks, patterns, and ACF blocks working together.
+
+---
+
 ## How It Works
 
 ### Design System — `theme.json`
@@ -44,7 +67,6 @@ Custom dynamic sections are registered via `acf_register_block_type()` and rende
 
 | Block | Description |
 |---|---|
-| `hero` | Full width hero section with heading, subheading, and CTA button |
 | `work-grid` | Portfolio project grid powered by a repeater field |
 | `testimonials` | Client testimonials powered by a repeater field |
 | `services` | Services list powered by a repeater field |
