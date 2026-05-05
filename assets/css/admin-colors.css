@@ -1,0 +1,73 @@
+/* Foundation WP — Admin Colour Scheme
+   Palette: contrast #0a0a0a | primary #2563eb | secondary #64748b | accent #f59e0b */
+
+:root {
+	--wp-admin-theme-color: #2563eb;
+	--wp-admin-theme-color-darker-10: #1d4ed8;
+	--wp-admin-theme-color-darker-20: #1e40af;
+}
+
+#adminmenu,
+#adminmenuback,
+#adminmenuwrap {
+	background-color: #0a0a0a;
+}
+
+#adminmenu a {
+	color: #f1f5f9;
+}
+
+#adminmenu li.menu-top:hover,
+#adminmenu li.opensub > a.menu-top,
+#adminmenu li > a.menu-top:focus {
+	color: #ffffff;
+	background-color: #2563eb;
+}
+
+#adminmenu .current a.menu-top,
+#adminmenu .current a.menu-top:hover {
+	color: #ffffff;
+	background-color: #2563eb;
+}
+
+#adminmenu .wp-submenu {
+	background-color: #1a1a1a;
+}
+
+#adminmenu .wp-submenu a {
+	color: #94a3b8;
+}
+
+#adminmenu .wp-submenu a:hover,
+#adminmenu .wp-submenu a:focus {
+	color: #ffffff;
+}
+
+#wpadminbar {
+	background-color: #0a0a0a;
+}
+
+#wpadminbar .ab-item,
+#wpadminbar a.ab-item,
+#wpadminbar .ab-label {
+	color: #f1f5f9;
+}
+
+#wpadminbar .ab-top-menu > li:hover > .ab-item,
+#wpadminbar .ab-top-menu > li.hover > .ab-item {
+	background-color: #2563eb;
+	color: #ffffff;
+}
+
+.wp-core-ui .button-primary {
+	background-color: #2563eb;
+	border-color: #1d4ed8;
+	color: #ffffff;
+}
+
+.wp-core-ui .button-primary:hover,
+.wp-core-ui .button-primary:focus {
+	background-color: #1d4ed8;
+	border-color: #1e40af;
+	color: #ffffff;
+}

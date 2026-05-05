@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Foundation WP — Main Stylesheet
+   Mobile first. Use --wp--preset--* variables throughout.
+   ========================================================================== */
+
+/* Base resets beyond what theme.json provides */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+img,
+video {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography overrides */
+
+p {
+	line-height: 1.7;
+}
+
+/* Navigation styles */
+
+.wp-block-navigation a {
+	text-decoration: none;
+}
+
+.wp-block-navigation a:hover {
+	text-decoration: underline;
+}
+
+/* Forms */
+
+input,
+textarea,
+select,
+button {
+	font-family: inherit;
+	font-size: inherit;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+textarea {
+	width: 100%;
+	padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--30);
+	border: 1px solid var(--wp--preset--color--secondary);
+	border-radius: 0.25rem;
+	background-color: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+	outline: 2px solid var(--wp--preset--color--primary);
+	border-color: var(--wp--preset--color--primary);
+}
+
+/* Utility classes */
+
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+/* WordPress core block overrides */
+
+.wp-block-post-content > * + * {
+	margin-top: var(--wp--preset--spacing--40);
+}
+
+.wp-block-query-pagination {
+	display: flex;
+	gap: var(--wp--preset--spacing--20);
+	justify-content: center;
+	margin-top: var(--wp--preset--spacing--60);
+}

@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Foundation WP — Editor Styles
+   Mirrors front-end appearance inside the block editor.
+   Target .editor-styles-wrapper for all rules.
+   ========================================================================== */
+
+.editor-styles-wrapper {
+	font-family: var(--wp--preset--font-family--system);
+	font-size: var(--wp--preset--font-size--medium);
+	line-height: 1.6;
+	color: var(--wp--preset--color--contrast);
+	background-color: var(--wp--preset--color--base);
+}
+
+.editor-styles-wrapper img,
+.editor-styles-wrapper video {
+	max-width: 100%;
+	height: auto;
+}
+
+.editor-styles-wrapper p {
+	line-height: 1.7;
+}
+
+.editor-styles-wrapper .wp-block {
+	max-width: 720px;
+}
+
+.editor-styles-wrapper .wp-block[data-align="wide"] {
+	max-width: 1200px;
+}
+
+.editor-styles-wrapper .wp-block[data-align="full"] {
+	max-width: none;
+}

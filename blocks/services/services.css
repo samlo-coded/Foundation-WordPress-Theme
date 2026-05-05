@@ -1,0 +1,66 @@
+/* Services Block — Mobile first
+   Breakpoints: sm:640px | md:768px | lg:1024px | xl:1280px */
+
+.fwp-block-services {
+	container-type: inline-size;
+	padding: var(--wp--preset--spacing--60) var(--wp--preset--spacing--40);
+}
+
+.fwp-block-services__heading {
+	font-size: var(--wp--preset--font-size--x-large);
+	font-weight: 700;
+	margin-bottom: var(--wp--preset--spacing--50);
+	text-align: center;
+}
+
+.fwp-block-services__list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: var(--wp--preset--spacing--40);
+}
+
+.fwp-block-services__item {
+	display: flex;
+	gap: var(--wp--preset--spacing--30);
+	align-items: flex-start;
+}
+
+.fwp-block-services__icon {
+	flex-shrink: 0;
+	width: 3rem;
+	height: 3rem;
+}
+
+.fwp-block-services__icon img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.fwp-block-services__title {
+	font-size: var(--wp--preset--font-size--large);
+	font-weight: 600;
+	margin-bottom: var(--wp--preset--spacing--20);
+	color: var(--wp--preset--color--contrast);
+}
+
+.fwp-block-services__description {
+	font-size: var(--wp--preset--font-size--medium);
+	color: var(--wp--preset--color--secondary);
+	line-height: 1.6;
+}
+
+@media (min-width: 640px) {
+	.fwp-block-services__list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 1024px) {
+	.fwp-block-services__list {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
