@@ -85,7 +85,44 @@ Reusable core block arrangements editors can insert from the Patterns tab. Patte
 5. Add, remove, or modify blocks in `/blocks/` as needed
 6. Build ACF field groups in the WordPress admin and assign them to their blocks
 
-> **Note:** ACF field groups are not version-controlled by default. Add an `/acf-json/` folder to the theme root to enable ACF local JSON — field groups will then save as `.json` files alongside your code.
+---
+
+## Preferred Deployment Workflow
+
+This theme is built around a **Local by Flywheel → Cloudways** workflow. All development happens locally; deployment is a full site export rather than a theme-only push.
+
+```
+GitHub (starter repo)
+      ↓ fork for new project
+Local by Flywheel (development)
+      ↓ full site export
+Cloudways (or any managed host)
+```
+
+**Why full site export?**
+ACF field groups are stored in the WordPress database, not in theme files. Deploying only the theme files would leave the field groups behind, resulting in blocks that render blank on the live server. Exporting the full site — database included — means field groups, content, and settings all arrive on the host intact with no manual syncing required.
+
+**Local by Flywheel export steps:**
+1. In Local, right-click the site → **Export**
+2. Choose to include the database
+3. Import the `.zip` on Cloudways via **WP Migrate** or **All-in-One WP Migration**
+4. Update the site URL in WordPress if the domain has changed
+
+---
+
+## A Note on ACF Local JSON
+
+If your workflow ever changes — for example, a second developer joins the project and spins up their own Local environment from the GitHub repo rather than from a site export — they will get the theme files but not your database, meaning field groups will be missing.
+
+To protect against this, add an `/acf-json/` folder to the **client fork** (not this starter) before building any field groups:
+
+```bash
+mkdir acf-json
+```
+
+ACF will automatically save every field group as a `.json` file in that folder whenever you save in the admin. Commit those files and they travel with the repo. On a fresh environment, go to **ACF → Field Groups** and click **Sync** to pull them into the database.
+
+This is optional for a solo workflow using full site exports, but strongly recommended for any project involving multiple developers or environments.
 
 ---
 
